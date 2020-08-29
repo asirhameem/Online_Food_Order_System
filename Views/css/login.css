@@ -1,0 +1,44 @@
+#mainDiv {
+    margin: 20%;
+    background-color: azure;
+    display: block;
+}
+
+.centerDiv {
+    margin: 10%;
+    background-color: fuchsia;
+    display: block;
+}
+
+.header-text {
+    margin: 10%;
+    background-color: forestgreen;
+    display: block;
+}
+
+#loginIcon {
+    margin-left: 5%;
+    display: inline-block;
+}
+
+#systemText {
+    margin-left: 5%;
+    display: inline-block;
+    float: right;
+    padding-right: 5%;
+}
+
+.login-form {
+    margin: auto;
+    background-color: dodgerblue;
+}
+
+#credentials {
+
+    float: inherit;
+}
+
+#signinText {
+
+    float: inherit;
+}
