@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Login Page</title>
     <link rel="stylesheet" href="css/login.css">
+    <script type="text/javascript" src="../assets/Login.js"></script>
 </head>
 
 <body>
@@ -27,11 +28,25 @@
                             <table>
                                 <tr>
                                     <td>UserName:</td>
-                                    <td><input type="text" id="userName" name="userName"></td>
+                                    <td><input type="text" id="userName" name="userName" onkeyup="EmptyCheck()"></td>
+                                    <td id="userNameMsg"></td>
                                 </tr>
                                 <tr>
                                     <td>Password:</td>
-                                    <td><input type="password" id="password" name="password"></td>
+                                    <td>
+                                        <input type="password" id="password" name="password" onkeyup="EmptyCheck() ">
+                                    </td>
+                                    <td id="passwordMsg"></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <button>Login</button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td><a href="">Sign Up!!</a></td>
                                 </tr>
                             </table>
                         </form>

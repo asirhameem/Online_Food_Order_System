@@ -1,18 +1,22 @@
+body {
+    background-color: gainsboro;
+}
+
 #mainDiv {
     margin: 20%;
-    background-color: azure;
+    background-color: gainsboro;
     display: block;
 }
 
 .centerDiv {
     margin: 10%;
-    background-color: fuchsia;
+    background-color: azure;
     display: block;
 }
 
 .header-text {
     margin: 10%;
-    background-color: forestgreen;
+    background-color: azure;
     display: block;
 }
 
@@ -26,11 +30,12 @@
     display: inline-block;
     float: right;
     padding-right: 5%;
+    font-size: 150%;
 }
 
 .login-form {
     margin: auto;
-    background-color: dodgerblue;
+    background-color: azure;
 }
 
 #credentials {
@@ -41,4 +46,6 @@
 #signinText {
 
     float: inherit;
+    text-align: right;
+
 }
