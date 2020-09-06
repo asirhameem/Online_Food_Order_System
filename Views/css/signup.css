@@ -1,0 +1,11 @@
+#formDiv{
+	display: block;
+	margin-left: 40%;
+	padding: 3%;
+}
+
+table{
+	border: 5px solid;
+	padding: 2%;
+	border-radius: 5px;
+}

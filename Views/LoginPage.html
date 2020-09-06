@@ -28,13 +28,13 @@
                             <table>
                                 <tr>
                                     <td>UserName:</td>
-                                    <td><input type="text" id="userName" name="userName" onkeyup="EmptyCheck()"></td>
+                                    <td><input type="text" id="userName" name="userName" onfocus="UserNameCheck()" onkeyup="UserNameCheck()" required></td>
                                     <td id="userNameMsg"></td>
                                 </tr>
                                 <tr>
                                     <td>Password:</td>
                                     <td>
-                                        <input type="password" id="password" name="password" onkeyup="EmptyCheck() ">
+                                        <input type="password" id="password" name="password" onkeyup="PasswordCheck()" required>
                                     </td>
                                     <td id="passwordMsg"></td>
                                 </tr>
