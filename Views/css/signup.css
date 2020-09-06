@@ -4,6 +4,28 @@
 	padding: 3%;
 }
 
+#fullnameMsg{
+	color: red;
+}
+
+#emailMsg
+{
+	color: blue;
+}
+
+#usernameMsg{
+	color: red;
+}
+
+#passwordMsg{
+	color: red;
+}
+
+#confpassMsg{
+	color: red;
+}
+
+
 table{
 	border: 5px solid;
 	padding: 2%;

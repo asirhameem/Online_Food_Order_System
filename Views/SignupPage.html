@@ -13,7 +13,7 @@
                 <h2>Register Here</h2>
                 <br>
                 <table>
-                   
+
                     <tr>
                         <td>Full Name</td>
 
@@ -21,9 +21,31 @@
                     </tr>
                     <tr>
                         <td>
-                            <input type="text" id="fullName" required>
+                            <input type="text" id="fullName" onkeyup="FullnameCheck()" required>
                         </td>
+
+                    </tr>
+
+                    <tr>
                         <td id="fullnameMsg"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td>Email</td>
+
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <input type="text" id="email" onkeyup="EmailCheck()" required>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td id="emailMsg"></td>
                     </tr>
 
                     <tr>
@@ -34,8 +56,12 @@
 
                     <tr>
                         <td>
-                            <input type="text" id="userName" required>
+                            <input type="text" id="userName" onkeyup="UserNameCheck()" required>
                         </td>
+
+                    </tr>
+
+                    <tr>
                         <td id="usernameMsg"></td>
                     </tr>
 
@@ -47,8 +73,12 @@
 
                     <tr>
                         <td>
-                            <input type="password" id="password" required>
+                            <input type="password" id="password" onkeyup="PasswordCheck()" required>
                         </td>
+
+                    </tr>
+
+                    <tr>
                         <td id="passwordMsg"></td>
                     </tr>
 
@@ -60,8 +90,12 @@
 
                     <tr>
                         <td>
-                            <input type="password" id="confPassword" required>
+                            <input type="password" id="confPassword" onkeyup="ConfirmPassCheck()" required>
                         </td>
+
+                    </tr>
+
+                    <tr>
                         <td id="confpassMsg"></td>
                     </tr>
 
@@ -74,13 +108,31 @@
                     <tr>
                         <td>
                             <select name="userType" id="userType">
+                                <option value="0">Select</option>
                                 <option value="customer">Customer</option>
                                 <option value="rider">Rider</option>
                                 <option value="restaurant">Restaurant</option>
                             </select>
                         </td>
                     </tr>
-                    
+
+                    <tr>
+                        <td id="usertypeMsg"></td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <hr>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            <button>Submit</button>
+                        </td>
+                    </tr>
 
                 </table>
             </form>
