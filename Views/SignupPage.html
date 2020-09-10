@@ -9,21 +9,18 @@
 <body>
     <div id="mainDiv">
         <div id="formDiv">
-            <form action="" method="post">
+            <form action="../PhpController/signupController.php" method="post">
                 <h2>Register Here</h2>
                 <br>
                 <table>
 
                     <tr>
                         <td>Full Name</td>
-
-
                     </tr>
                     <tr>
                         <td>
                             <input type="text" id="fullName" onkeyup="FullnameCheck()" required>
                         </td>
-
                     </tr>
 
                     <tr>
@@ -33,15 +30,12 @@
 
                     <tr>
                         <td>Email</td>
-
-
                     </tr>
 
                     <tr>
                         <td>
                             <input type="text" id="email" onkeyup="EmailCheck()" required>
                         </td>
-
                     </tr>
 
                     <tr>
@@ -50,8 +44,6 @@
 
                     <tr>
                         <td>User Name</td>
-
-
                     </tr>
 
                     <tr>
@@ -107,7 +99,7 @@
 
                     <tr>
                         <td>
-                            <select name="userType" id="userType">
+                            <select name="userType" id="userType" onchange="UserCheck()">
                                 <option value="0">Select</option>
                                 <option value="customer">Customer</option>
                                 <option value="rider">Rider</option>
@@ -130,7 +122,7 @@
                     <tr>
 
                         <td>
-                            <button>Submit</button>
+                            <button onclick="SubmissionCheck()">Submit</button>
                         </td>
                     </tr>
 

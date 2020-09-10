@@ -5,7 +5,7 @@
 	$pass	= "";
 	$name	= "online_food_order_system";
 
-	function dbConnection(){
+	function Connection(){
 
 		global $host;
 		global $user;

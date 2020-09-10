@@ -10,7 +10,7 @@
 
 #emailMsg
 {
-	color: blue;
+	color: red;
 }
 
 #usernameMsg{
@@ -22,6 +22,10 @@
 }
 
 #confpassMsg{
+	color: red;
+}
+
+#usertypeMsg{
 	color: red;
 }
 
