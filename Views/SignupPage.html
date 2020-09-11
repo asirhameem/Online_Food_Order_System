@@ -92,21 +92,28 @@
                     </tr>
 
 
+
+                    <!--
+                    
                     <tr>
                         <td colspan="2">Select User Type</td>
                         <td></td>
                     </tr>
-
+                    
                     <tr>
                         <td>
-                            <select name="userType" id="userType" onchange="UserCheck()">
-                                <option value="0">Select</option>
-                                <option value="customer">Customer</option>
-                                <option value="rider">Rider</option>
-                                <option value="restaurant">Restaurant</option>
+                            <select id="users" onchange="UserCheck()">
+                                <option>Select</option>
+                                <option>Customer</option>
+                                <option>Rider</option>
+                                <option>Restaurant</option>
                             </select>
                         </td>
-                    </tr>
+                        </tr>
+                         -->
+
+
+
 
                     <tr>
                         <td id="usertypeMsg"></td>
@@ -122,7 +129,7 @@
                     <tr>
 
                         <td>
-                            <button onclick="SubmissionCheck()">Submit</button>
+                            <button type="button" onclick="SubmissionCheck()">Submit</button>
                         </td>
                     </tr>
 

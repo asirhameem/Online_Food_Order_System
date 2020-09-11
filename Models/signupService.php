@@ -13,16 +13,23 @@ function ExistingEmail($mail)
 
 function Registration($data)
 {
-    $con = Connection();
-    $query = "insert into user (name,username,password,email,type,status) VALUES ('{$data['name']}','{$data['username']}','{$data['password']}','{$data['email']}', '{$data['type']}', '{$data['status']}');";
-    $result = mysqli_query($con, $query);
-    if($result == true)
+    if(empty($data))
     {
-        return true;
+        return false;
     }
     else
     {
-        return false;
+        $con = Connection();
+        $query = "insert into user (name,username,password,email,type,status) VALUES ('{$data['name']}','{$data['username']}','{$data['password']}','{$data['email']}', '{$data['user']}', '{$data['status']}');";
+        $result = mysqli_query($con, $query);
+        if($result)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
         
 }
