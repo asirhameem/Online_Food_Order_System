@@ -166,7 +166,7 @@ function SubmissionCheck() {
 
                 alert(xhttp.responseText);
                 if (xhttp.responseText == "Registered to the system") {
-                    window.location.href = 'LoginPage.html';
+                    window.location.href = 'LoginPage.php';
                 }
 
             }

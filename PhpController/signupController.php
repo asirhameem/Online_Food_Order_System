@@ -51,7 +51,7 @@ if(isset($_POST['data']))
             "name" => $info->name,
             "email" => $info->email,
             "username" => $info->username,
-            "password" => $info->password,
+            "password" => md5($info->password),
             "user" => $info->user,
             "status" => $info->status
 

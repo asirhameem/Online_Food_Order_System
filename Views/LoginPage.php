@@ -1,3 +1,10 @@
+<?php
+require_once('../PhpController/loginController.php');
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,26 +31,45 @@
                         <p>Sign In With Your Credentials</p>
                     </div>
                     <div id="credentials">
-                        <form action="">
+                        <form action="../PhpController/loginController.php" method="post">
                             <table>
                                 <tr>
                                     <td>UserName:</td>
                                     <td><input type="text" id="userName" name="userName" onfocus="UserNameCheck()" onkeyup="UserNameCheck()" required></td>
+
+                                </tr>
+
+                                <tr>
+                                    <td></td>
                                     <td id="userNameMsg"></td>
                                 </tr>
+
                                 <tr>
                                     <td>Password:</td>
                                     <td>
                                         <input type="password" id="password" name="password" onkeyup="PasswordCheck()" required>
                                     </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td></td>
                                     <td id="passwordMsg"></td>
                                 </tr>
+
+                                <tr>
+                                    <td></td>
+                                    <td><input type="checkbox" name="rememberMe">Remember Me</td>
+                                </tr>
+
                                 <tr>
                                     <td></td>
                                     <td>
                                         <button>Login</button>
                                     </td>
                                 </tr>
+
+
 
                                 <tr>
                                     <td></td>
