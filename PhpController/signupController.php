@@ -17,6 +17,21 @@ if(isset($_POST['email']))
     }
 }
 
+if(isset($_POST['username']))
+{
+	$userName = $_POST['username'];
+	$result = ExistingUsername($userName);
+    //$data = $result;
+	if($result['username'] == $userName)
+	{
+		echo "User Name Taken";
+	}
+	else
+	{
+        echo "Good to go!";
+    }
+}
+
 if(isset($_POST['data']))
 {
     $data = $_POST['data'];

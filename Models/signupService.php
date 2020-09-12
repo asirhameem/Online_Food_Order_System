@@ -14,6 +14,19 @@ function ExistingEmail($mail)
 
 }
 
+function ExistingUsername($username)
+{
+	$con = Connection();
+	$sql = "select * from user where username='".$username."';";
+	$result = mysqli_query($con, $sql);
+	$arr=0;
+	while($row = mysqli_fetch_assoc($result)) {
+		$arr=$row;
+	}
+    return $arr;
+
+}
+
 function Registration($data)
 {
     if(empty($data))

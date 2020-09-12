@@ -1,3 +1,4 @@
+var nameError = 0;
 var name;
 
 
@@ -6,34 +7,50 @@ function FullnameCheck() {
     var fullnameMsg = document.getElementById("fullnameMsg");
     if (fullName.length < 3) {
         fullnameMsg.innerHTML = "Please provide a valid Name";
-        return false;
+        nameError = 1;
     } else {
         fullnameMsg.innerHTML = "";
         name = fullName;
-        return true;
+        nameError = 0;
     }
 }
 
 
 var username;
+var usernameError = 0;
 
 function UserNameCheck() {
     var userName = document.getElementById("userName").value;
     var usernameMsg = document.getElementById("usernameMsg");
 
-    if (userName.length > 0 && userName.length < 4) {
+    if (userName.length < 4) {
         usernameMsg.innerHTML = "Provide atleast 4 character";
-        return false;
-    } else if (userName.length < 0) {
-        usernameMsg.innerHTML = "Empty UserName";
+        usernameError = 1;
     } else {
-        usernameMsg.innerHTML = "";
-        username = userName;
-        return true;
+        /*  usernameMsg.innerHTML = "";
+        
+        return true;     */
+        var uname = new XMLHttpRequest();
+        uname.open('POST', '../PhpController/signupController.php', true);
+        uname.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        uname.send('username=' + userName);
+        uname.onreadystatechange = function () {
+            if (uname.readyState == 4 && uname.status == 200) {
+                usernameMsg.innerHTML = uname.responseText;
+                if (uname.responseText == "User Name Taken") {
+                    usernameError = 1;
+                } else {
+                    usernameError = 0;
+                    username = userName;
+                }
+
+            }
+        }
     }
 }
 
 var pass;
+var passError = 0;
 
 function PasswordCheck() {
 
@@ -42,15 +59,15 @@ function PasswordCheck() {
 
     if (password.length < 8) {
         passwordMsg.innerHTML = "Password must have 8 character";
-        return false;
+        passError = 1;
     } else if (password.length >= 8 && ((password.indexOf("@") == -1))) {
         passwordMsg.innerHTML = "Password is not so Strong";
         pass = password;
-        return true;
+        passError = 0;
     } else {
         passwordMsg.innerHTML = "Strong Password";
         pass = password;
-        return true;
+        passError = 0;
     }
 }
 
@@ -69,6 +86,7 @@ function ConfirmPassCheck() {
 
 
 var mail;
+var mailError = 0;
 
 function EmailCheck() {
     var email = document.getElementById("email").value;
@@ -77,13 +95,13 @@ function EmailCheck() {
 
     if ((email.indexOf("@") == -1) || (email.indexOf(".") == -1)) {
         emailMsg.innerHTML = "Please provide a valid email address";
-        return false;
-    } else if (email.indexOf("@") > email.indexOf(".") || (email.length == 0)) {
+        mailError = 1;
+    } else if (email.indexOf("@") > email.indexOf(".")) {
         emailMsg.innerHTML = "Invalid Email";
-        return false;
+        mailError = 1;
     } else {
         /*emailMsg.innerHTML = "";
-        mail = email;
+        
         return true;*/
         var emreq = new XMLHttpRequest();
         emreq.open('POST', '../PhpController/signupController.php', true);
@@ -92,6 +110,12 @@ function EmailCheck() {
         emreq.onreadystatechange = function () {
             if (emreq.readyState == 4 && emreq.status == 200) {
                 emailMsg.innerHTML = emreq.responseText;
+                if (emreq.responseText == "Email Taken") {
+                    mailError = 1;
+                } else {
+                    mailError = 0;
+                    mail = email;
+                }
             }
         }
 
@@ -117,29 +141,38 @@ var user;
 
 
 function SubmissionCheck() {
-    var userData = {
-        'name': name,
-        'email': mail,
-        'username': username,
-        'password': pass,
-        'user': "Customer",
-        'status': "Active"
+    var subError = nameError + usernameError + passError + mailError;
 
-    };
+    if (subError == 0) {
+        var userData = {
+            'name': name,
+            'email': mail,
+            'username': username,
+            'password': pass,
+            'user': "Customer",
+            'status': "Active"
 
-    userData = JSON.stringify(userData);
+        };
 
-    var xhttp = new XMLHttpRequest();
-    xhttp.open('POST', '../PhpController/signupController.php', true);
-    xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        userData = JSON.stringify(userData);
 
-    xhttp.send('data=' + userData);
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            alert(this.responseText);
-            window.location.href = 'LoginPage.html';
+        var xhttp = new XMLHttpRequest();
+        xhttp.open('POST', '../PhpController/signupController.php', true);
+        xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
+        xhttp.send('data=' + userData);
+        xhttp.onreadystatechange = function () {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+
+                alert(xhttp.responseText);
+                if (xhttp.responseText == "Registered to the system") {
+                    window.location.href = 'LoginPage.html';
+                }
+
+            }
         }
+    } else {
+        alert("Check Previous Fields");
     }
 
 }
