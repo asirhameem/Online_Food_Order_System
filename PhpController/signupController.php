@@ -6,14 +6,15 @@ if(isset($_POST['email']))
 {
 	$email = $_POST['email'];
 	$result = ExistingEmail($email);
-	if($result > 0)
+    //$data = $result;
+	if($result['email'] == $email)
 	{
-		echo "Email is already exist";
+		echo "Email Taken";
 	}
 	else
 	{
-		echo "You are good to go";
-	}
+        echo "Good to go!";
+    }
 }
 
 if(isset($_POST['data']))

@@ -3,15 +3,20 @@ body {
 }
 
 #mainDiv {
-    margin: 20%;
+    margin-left: 35%;
+    margin-right: 35%;
+    padding-top: 10%;
     background-color: gainsboro;
     display: block;
 }
 
 .centerDiv {
-    margin: 10%;
+    margin-left: 10%;
     background-color: azure;
+    padding-left: 10%;
     display: block;
+    border: 5px solid;
+    border-radius: 5px;
 }
 
 .header-text {
@@ -25,13 +30,7 @@ body {
     display: inline-block;
 }
 
-#systemText {
-    margin-left: 5%;
-    display: inline-block;
-    float: right;
-    padding-right: 5%;
-    font-size: 150%;
-}
+
 
 .login-form {
     margin: auto;
@@ -47,5 +46,6 @@ body {
 
     float: inherit;
     text-align: right;
+    display: inline-block;
 
 }

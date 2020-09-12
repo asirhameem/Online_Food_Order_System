@@ -14,15 +14,18 @@ function FullnameCheck() {
     }
 }
 
+
 var username;
 
 function UserNameCheck() {
     var userName = document.getElementById("userName").value;
     var usernameMsg = document.getElementById("usernameMsg");
 
-    if (userName.length < 4) {
+    if (userName.length > 0 && userName.length < 4) {
         usernameMsg.innerHTML = "Provide atleast 4 character";
         return false;
+    } else if (userName.length < 0) {
+        usernameMsg.innerHTML = "Empty UserName";
     } else {
         usernameMsg.innerHTML = "";
         username = userName;
@@ -63,19 +66,35 @@ function ConfirmPassCheck() {
     }
 }
 
+
+
 var mail;
 
 function EmailCheck() {
     var email = document.getElementById("email").value;
     var emailMsg = document.getElementById("emailMsg");
 
+
     if ((email.indexOf("@") == -1) || (email.indexOf(".") == -1)) {
         emailMsg.innerHTML = "Please provide a valid email address";
         return false;
+    } else if (email.indexOf("@") > email.indexOf(".") || (email.length == 0)) {
+        emailMsg.innerHTML = "Invalid Email";
+        return false;
     } else {
-        emailMsg.innerHTML = "";
+        /*emailMsg.innerHTML = "";
         mail = email;
-        return true;
+        return true;*/
+        var emreq = new XMLHttpRequest();
+        emreq.open('POST', '../PhpController/signupController.php', true);
+        emreq.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        emreq.send('email=' + email);
+        emreq.onreadystatechange = function () {
+            if (emreq.readyState == 4 && emreq.status == 200) {
+                emailMsg.innerHTML = emreq.responseText;
+            }
+        }
+
     }
 
 
@@ -83,8 +102,8 @@ function EmailCheck() {
 
 
 var user;
-/*
-function UserCheck() {
+
+/*function UserCheck() {
     var selectUser = document.getElementById("users");
     var usertypeMsg = document.getElementById("usertypeMsg");
     if (selectUser.value == "Select") {
@@ -93,7 +112,9 @@ function UserCheck() {
         usertypeMsg.innerHTML = "";
         user = select.options[select.selectedIndex].value;
     }
-} */
+}
+*/
+
 
 function SubmissionCheck() {
     var userData = {
@@ -115,7 +136,8 @@ function SubmissionCheck() {
     xhttp.send('data=' + userData);
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("usertypeMsg").innerHTML = this.responseText;
+            alert(this.responseText);
+            window.location.href = 'LoginPage.html';
 
         }
     }
