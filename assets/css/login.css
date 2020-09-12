@@ -49,3 +49,11 @@ body {
     display: inline-block;
 
 }
+
+#userNameMsg {
+    color: red;
+}
+
+#passWordMsg {
+    color: red;
+}

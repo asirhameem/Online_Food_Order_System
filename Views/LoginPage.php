@@ -1,5 +1,5 @@
 <?php
-require_once('../PhpController/loginController.php');
+require_once('../Models/loginService.php');
 
 ?>
 
@@ -20,7 +20,7 @@ require_once('../PhpController/loginController.php');
         <div class="centerDiv">
             <div class="header-text">
                 <div id="loginIcon">
-                    <img src="image/login.png" alt="login system picture">
+                    <img src="../assets/image/login.png" alt="login system picture">
                 </div>
                 <div id="systemText">
                     <h2>Welcome to the System</h2>
@@ -35,7 +35,7 @@ require_once('../PhpController/loginController.php');
                             <table>
                                 <tr>
                                     <td>UserName:</td>
-                                    <td><input type="text" id="userName" name="userName" onfocus="UserNameCheck()" onkeyup="UserNameCheck()" required></td>
+                                    <td><input type="text" id="userName" onkeyup="CredentialCheck()" value="<?php if(isset($_COOKIE["username"])){echo $_COOKIE["username"];}?>" required></td>
 
                                 </tr>
 
@@ -47,25 +47,25 @@ require_once('../PhpController/loginController.php');
                                 <tr>
                                     <td>Password:</td>
                                     <td>
-                                        <input type="password" id="password" name="password" onkeyup="PasswordCheck()" required>
+                                        <input type="password" id="pass" onkeyup="CredentialCheck()" value="<?php if(isset($_COOKIE["pass"])){echo $_COOKIE["pass"];}?>" required>
                                     </td>
 
                                 </tr>
 
                                 <tr>
                                     <td></td>
-                                    <td id="passwordMsg"></td>
+                                    <td id="passWordMsg"></td>
                                 </tr>
 
                                 <tr>
                                     <td></td>
-                                    <td><input type="checkbox" name="rememberMe">Remember Me</td>
+                                    <td><input type="checkbox" name="rememberMe" onchange="RememberMe()">Remember Me</td>
                                 </tr>
 
                                 <tr>
                                     <td></td>
                                     <td>
-                                        <button>Login</button>
+                                        <button type="button" onclick="LoginCheck()">Login</button>
                                     </td>
                                 </tr>
 
