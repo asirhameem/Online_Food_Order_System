@@ -64,20 +64,24 @@ function CredentialCheck() {
 function RememberMe() {
     var userName = document.getElementById("userName").value;
     var password = document.getElementById("pass").value;
-    var info = {
-        'username': userName,
-        'password': password
-    };
-    info = JSON.stringify(info);
 
-    var save = new XMLHttpRequest();
-    save.open('POST', '../PhpController/loginController.php', true);
-    save.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    save.send('remember=' + info);
-    save.onreadystatechange = function () {
-        if (save.readyState == 4 && save.status == 200) {
-            alert("Saved");
+    if (userName.length < 4 || password.length < 8) {
+        alert("Invalid Credentials");
+    } else {
+        var info = {
+            'username': userName,
+            'password': password
+        };
+        info = JSON.stringify(info);
+
+        var save = new XMLHttpRequest();
+        save.open('POST', '../PhpController/loginController.php', true);
+        save.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        save.send('remember=' + info);
+        save.onreadystatechange = function () {
+            if (save.readyState == 4 && save.status == 200) {
+                alert("Saved");
+            }
         }
     }
-
 }
