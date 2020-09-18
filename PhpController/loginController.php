@@ -26,6 +26,7 @@ if(isset($_POST['info']))
             $_SESSION["email"] = $check['email'];
             $_SESSION["type"] = $check['type'];
             $_SESSION["status"] = $check['status'];
+            
         }
         else if($check['username'] == $uname && md5($pass) == $check['password'] && $check['type'] == "Rider")
         {
@@ -56,6 +57,10 @@ if(isset($_POST['info']))
             $_SESSION["email"] = $check['email'];
             $_SESSION["type"] = $check['type'];
             $_SESSION["status"] = $check['status'];
+        }
+        else if($check['username'] == "" && $check['password'] == "")
+        {
+            echo "User Name Or Password Does Not matched.";
         }
         
     }

@@ -80,7 +80,7 @@ function RememberMe() {
         save.send('remember=' + info);
         save.onreadystatechange = function () {
             if (save.readyState == 4 && save.status == 200) {
-                alert("Saved");
+                alert("Username and Password is Saved");
             }
         }
     }

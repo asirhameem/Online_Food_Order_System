@@ -57,3 +57,7 @@ body {
 #passWordMsg {
     color: red;
 }
+
+#signupUrl {
+    text-decoration: none;
+}

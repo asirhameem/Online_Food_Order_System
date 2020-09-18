@@ -20,7 +20,7 @@ require_once('../Models/loginService.php');
         <div class="centerDiv">
             <div class="header-text">
                 <div id="loginIcon">
-                    <img src="../assets/image/login.png" alt="login system picture">
+                    <!--<img src="../assets/image/login.png" alt="login system picture">--->
                 </div>
                 <div id="systemText">
                     <h2>Welcome to the System</h2>
@@ -59,7 +59,7 @@ require_once('../Models/loginService.php');
 
                                 <tr>
                                     <td></td>
-                                    <td><input type="checkbox" name="rememberMe" onchange="RememberMe()">Remember Me</td>
+                                    <td><input type="checkbox" name="rememberMe" onclick="RememberMe()">Remember Me</td>
                                 </tr>
 
                                 <tr>
@@ -73,7 +73,7 @@ require_once('../Models/loginService.php');
 
                                 <tr>
                                     <td></td>
-                                    <td><a href="SignupPage.html">Sign Up!!</a></td>
+                                    <td><a id="signupUrl" href="SignupPage.html">Sign Up!!</a></td>
                                 </tr>
                             </table>
                         </form>
