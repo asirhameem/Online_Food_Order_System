@@ -19,8 +19,9 @@ function LoginCheck() {
             if (xhttp.readyState == 4 && xhttp.status == 200) {
                 alert(xhttp.responseText);
                 if (xhttp.responseText == "Customer") {
-                    window.location.href = "HomePage.html"
+                    window.location.href = "HomePage.php"
                 }
+                //Need to write the Rider Logic and Restaurant Logic
             }
         }
     } else {

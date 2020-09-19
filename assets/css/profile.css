@@ -1,0 +1,61 @@
+#infoTable {
+    width: 40%;
+    margin-top: 5%;
+    margin-left: 10%;
+    font-size: 150%;
+    display: inline-block;
+    float: left;
+}
+
+#image {
+    margin-top: 5%;
+}
+
+.dp {
+    display: inline-block;
+    float: right;
+
+}
+
+
+.infoBox {
+    width: 80%;
+}
+
+.infoTag {
+    width: 20%;
+}
+
+header {
+    background-size: cover;
+    text-align: center;
+    font-size: 150%;
+    background-color: gray;
+    color: white;
+    height: 5%;
+}
+
+
+nav a {
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    margin-left: 5%;
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+    padding: 1%;
+    text-align: center;
+    background-color: white;
+
+    border-radius: 5px;
+    opacity: 0.5;
+}
+
+nav a:visited {
+    color: purple;
+}
+
+nav a:hover {
+    background-color: white;
+    opacity: 1;
+}
