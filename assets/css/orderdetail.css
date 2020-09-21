@@ -4,7 +4,7 @@ header {
     font-size: 150%;
     background-color: gray;
     color: white;
-    height: 5%;
+    height: 10%;
 }
 
 
@@ -30,22 +30,4 @@ nav a:visited {
 nav a:hover {
     background-color: white;
     opacity: 1;
-}
-
-.Dishes {
-    width: 80%;
-    display: -webkit-flex;
-    display: flex;
-}
-
-/*img {
-    max-height: 150px;
-    max-width: 150px;
-}*/
-
-.DinnerDishes {
-    max-width: 25%;
-    display: inline-block;
-    padding: 3%;
-    margin-left: 8%;
 }

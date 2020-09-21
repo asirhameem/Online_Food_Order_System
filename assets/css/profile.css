@@ -1,20 +1,37 @@
 #infoTable {
     width: 40%;
-    margin-top: 5%;
     margin-left: 10%;
     font-size: 150%;
     display: inline-block;
     float: left;
+    border: 3px solid;
+    border-radius: 2px;
+    padding-left: 5%;
+    margin-top: 5%;
+}
+
+#changePassword {
+    margin-top: 5%;
+    width: 35%;
+    margin-left: 5%;
+    display: inline-block;
+    font-size: 150%;
+}
+
+#passMsg {
+    font-size: 70%;
+    color: red;
 }
 
 #image {
     margin-top: 5%;
 }
 
-.dp {
-    display: inline-block;
-    float: right;
+#displayPic {
 
+    margin-left: 10%;
+    margin-top: 5%;
+    display: block;
 }
 
 
@@ -46,7 +63,6 @@ nav a {
     padding: 1%;
     text-align: center;
     background-color: white;
-
     border-radius: 5px;
     opacity: 0.5;
 }

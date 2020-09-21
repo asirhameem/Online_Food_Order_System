@@ -26,6 +26,7 @@ if(isset($_POST['info']))
             $_SESSION["email"] = $check['email'];
             $_SESSION["type"] = $check['type'];
             $_SESSION["status"] = $check['status'];
+            $_SESSION["dp"] = $check['dp'];
             $_SESSION["valid"] = "Yes";
             
             
@@ -39,6 +40,8 @@ if(isset($_POST['info']))
             $_SESSION["email"] = $check['email'];
             $_SESSION["type"] = $check['type'];
             $_SESSION["status"] = $check['status'];
+            $_SESSION["dp"] = $check['dp'];
+            $_SESSION["valid"] = "Yes";
         }
         else if($check['username'] == $uname && md5($pass) == $check['password'] && $check['type'] == "Restaurant")
         {
@@ -49,6 +52,7 @@ if(isset($_POST['info']))
             $_SESSION["email"] = $check['email'];
             $_SESSION["type"] = $check['type'];
             $_SESSION["status"] = $check['status'];
+            $_SESSION["dp"] = $check['dp'];
             $_SESSION["valid"] = "Yes";
         }
         else if($check['username'] == $uname && md5($pass) == $check['password'] && $check['type'] == "Admin")
@@ -60,6 +64,7 @@ if(isset($_POST['info']))
             $_SESSION["email"] = $check['email'];
             $_SESSION["type"] = $check['type'];
             $_SESSION["status"] = $check['status'];
+            $_SESSION["dp"] = $check['dp'];
             $_SESSION["valid"] = "Yes";
         }
         else if($check['username'] == "" && $check['password'] == "")
