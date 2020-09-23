@@ -21,7 +21,7 @@ if(isset($_POST['add_to_cart']))
     ?>
 <script>
     alert("Item Added");
-    window.location.href = "../Views/cart.php";
+    window.location.href = "../Views/HomePage.php";
 
 </script>
 <?php
@@ -79,6 +79,7 @@ if(isset($_POST['checkout']))
 
 </script>
 <?php
+            ClearCart();
         }
     }
 }

@@ -20,7 +20,14 @@ function LoginCheck() {
                 alert(xhttp.responseText);
                 if (xhttp.responseText == "Customer") {
                     window.location.href = "HomePage.php"
+                } else if (xhttp.responseText == "Rider") {
+                    window.location.href = "dashboardrider.php"
+                } else if (xhttp.responseText == "Admin") {
+                    window.location.href = "adminUi.php"
+                } else if (xhttp.responseText == "Restaurant") {
+                    window.location.href = ".php"
                 }
+
                 //Need to write the Rider Logic and Restaurant Logic
             }
         }

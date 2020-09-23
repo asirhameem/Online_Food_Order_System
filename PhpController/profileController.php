@@ -90,4 +90,21 @@ if(isset($_POST['password']))
 }
 
 
+if(isset($_POST['deleteAccount']))
+{
+    $username = $_SESSION['username'];
+    $result = DeleteAccount($username);
+    if($result)
+    {
+        ?>
+<script>
+    alert("Account Deleted")
+    window.location.href = "../Views/MyProfile.php";
+
+</script>
+<?php
+        session_unset();
+    }
+}
+
 ?>

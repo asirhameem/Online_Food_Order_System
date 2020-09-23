@@ -15,6 +15,14 @@ function LoadInfo($username)
     
 }
 
+function DeleteAccount($username)
+{
+    $con = Connection();
+    $sql = "delete from user where username = '".$username."';";
+    $result = mysqli_query($con,$sql);
+    return $result;
+}
+
 function UpdateImage($path, $email)
 {
     $con = Connection();

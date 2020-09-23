@@ -126,15 +126,15 @@ if(isset($_SESSION["valid"]) && $_SESSION["valid"]=="Yes"){
     </div>
 
 
-    <div style="display:inline-block; float:right;">
+    <div style="display:inline-block; float:right; width:10%;">
         <form action="../PhpController/cartController.php" method="post">
-            <table style="border:5px solid; border-radius:3px; margin-top:5%;">
+            <table style=" margin-top:10%;">
                 <tr style="text-align:right; width:100%;">
                     <td colspan="2">
                         <input type="hidden" name="bill" value="<?php echo $sum['total']; ?>">
                         <input type="hidden" name="status" value="Pending">
                         <input type="hidden" name="list" value="<?php echo $concat; ?>">
-                        <input type="submit" name="checkout" value="getout">
+                        <input style="padding:3%; width:150%;" type="submit" name="checkout" value="Checkout">
 
                     </td>
                 </tr>

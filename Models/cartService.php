@@ -63,6 +63,15 @@ function SendToOrders($name,$details,$price,$status)
 }
 
 
+function ClearCart()
+{
+    $con = Connection();
+    $sql = "delete from cart;";
+    $result = mysqli_query($con,$sql);
+    return $result;
+}
+
+
 
 
 ?>

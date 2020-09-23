@@ -21,9 +21,10 @@ if(isset($_SESSION["valid"]) && $_SESSION["valid"]=="Yes"){
         <nav>
             <a href="MyProfile.php">Welcome, <?php   echo $_SESSION['name']   ?></a>
             <a href="HomePage.php">Home</a>
-            <a href="MyProfile.php">My Profile</a>
+            <!--<a href="MyProfile.php">My Profile</a>-->
             <a href="OrderDetails.php">Order Details</a>
             <a href="cart.php">Cart</a>
+            <a href="Forum.php">Forum</a>
             <a href="LoginPage.php">Logout</a>
         </nav>
 
